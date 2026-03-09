@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse photos from The Frame Foundation events — leadership conferences, mentorship programs, community workshops, and more.">
+  <title>Gallery — The Frame Foundation</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <nav class="nav" id="main-nav">
+      <a href="index.html" class="nav__logo">The Frame Foundation</a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="gallery.html" class="nav__link nav__link--active">Gallery</a></li>
+        <li><a href="donate.html" class="nav__link">Donate</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1 class="page-header__title">Our Gallery</h1>
+      <p class="page-header__subtitle">
+        Moments of leadership, growth, and community from our events and programs.
+      </p>
+    </div>
+  </section>
+
+  <!-- Gallery Grid -->
+  <section class="gallery">
+    <div class="container">
+      <div class="gallery__grid" id="gallery-grid">
+        <div class="gallery__item" data-index="0">
+          <img src="images/gallery-1.png" alt="Women at a leadership conference networking event" loading="lazy">
+        </div>
+        <div class="gallery__item" data-index="1">
+          <img src="images/gallery-2.png" alt="Mentorship meeting between professional women" loading="lazy">
+        </div>
+        <div class="gallery__item" data-index="2">
+          <img src="images/gallery-3.png" alt="Keynote speaker at a nonprofit gala event" loading="lazy">
+        </div>
+        <div class="gallery__item" data-index="3">
+          <img src="images/gallery-4.png" alt="Women's empowerment workshop collaboration" loading="lazy">
+        </div>
+        <div class="gallery__item" data-index="4">
+          <img src="images/gallery-5.png" alt="Charity fundraising gala with community members" loading="lazy">
+        </div>
+        <div class="gallery__item" data-index="5">
+          <img src="images/gallery-6.png" alt="Community outreach volunteering program" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox__close" id="lightbox-close" aria-label="Close lightbox">&times;</button>
+    <img class="lightbox__img" id="lightbox-img" src="" alt="Gallery image full view">
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__text">&copy; 2026 The Frame Foundation. All rights reserved.</p>
+        <div class="footer__links">
+          <a href="index.html" class="footer__link">Home</a>
+          <a href="gallery.html" class="footer__link">Gallery</a>
+          <a href="donate.html" class="footer__link">Donate</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

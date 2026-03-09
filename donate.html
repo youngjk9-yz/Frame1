@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Support The Frame Foundation's mission to empower women in leadership and community building. Make a tax-deductible donation today.">
+  <title>Donate — The Frame Foundation</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <nav class="nav" id="main-nav">
+      <a href="index.html" class="nav__logo">The Frame Foundation</a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="gallery.html" class="nav__link">Gallery</a></li>
+        <li><a href="donate.html" class="nav__link nav__link--active">Donate</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Donation Intro -->
+  <section class="donate-intro">
+    <div class="container">
+      <h1 class="page-header__title">Support Our Mission</h1>
+      <p class="donate-intro__text">
+        Your generosity helps us create leadership programs, mentorship opportunities,
+        and community spaces where women can thrive. Every contribution, no matter the
+        size, makes a meaningful difference. All donations are tax-deductible.
+      </p>
+    </div>
+  </section>
+
+  <!-- Donation Tiers -->
+  <section class="donation-tiers">
+    <div class="container">
+      <h2 class="donation-tiers__heading">Choose Your Impact</h2>
+      <div class="tiers__grid" id="tiers-grid">
+        <div class="tier-card" data-amount="25">
+          <div class="tier-card__amount">$25</div>
+          <div class="tier-card__label">Supporter</div>
+          <p class="tier-card__desc">Provides mentorship materials for one aspiring woman leader.</p>
+        </div>
+        <div class="tier-card" data-amount="50">
+          <div class="tier-card__amount">$50</div>
+          <div class="tier-card__label">Advocate</div>
+          <p class="tier-card__desc">Funds a leadership workshop seat for one participant.</p>
+        </div>
+        <div class="tier-card" data-amount="100">
+          <div class="tier-card__amount">$100</div>
+          <div class="tier-card__label">Champion</div>
+          <p class="tier-card__desc">Sponsors a full professional development session for women in transition.</p>
+        </div>
+        <div class="tier-card" data-amount="custom">
+          <div class="tier-card__amount">Custom</div>
+          <div class="tier-card__label">Your Choice</div>
+          <p class="tier-card__desc">Enter any amount to make a personal impact.</p>
+          <input type="number" class="tier-card__input" id="custom-amount" placeholder="$ Amount" min="1" aria-label="Custom donation amount">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Donation Form -->
+  <section class="donate-form-section">
+    <div class="container">
+      <h2 class="donate-form__heading">Complete Your Donation</h2>
+      <form class="donate-form" id="donate-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="donor-first">First Name</label>
+            <input type="text" id="donor-first" name="first_name" required>
+          </div>
+          <div class="form-group">
+            <label for="donor-last">Last Name</label>
+            <input type="text" id="donor-last" name="last_name" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="donor-email">Email Address</label>
+          <input type="email" id="donor-email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="donation-amount">Donation Amount</label>
+          <input type="text" id="donation-amount" name="amount" required readonly>
+        </div>
+        <div class="form-group">
+          <label for="donor-message">Message (optional)</label>
+          <textarea id="donor-message" name="message" placeholder="Share why you're supporting The Frame Foundation..."></textarea>
+        </div>
+        <button type="submit" class="btn btn--accent btn--large">Donate Now</button>
+      </form>
+
+      <!-- Success Message -->
+      <div class="form-success" id="form-success">
+        <h3>Thank You for Your Generosity!</h3>
+        <p>Your donation will help empower women in leadership and community building. A confirmation has been sent to your email.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Section -->
+  <section class="impact">
+    <div class="container">
+      <h2 class="impact__title">Your Impact in Numbers</h2>
+      <div class="impact__grid">
+        <div class="impact__card">
+          <div class="impact__number">500+</div>
+          <div class="impact__label">Women supported through leadership programs and mentorship opportunities</div>
+        </div>
+        <div class="impact__card">
+          <div class="impact__number">40+</div>
+          <div class="impact__label">Workshops and events held to inspire growth and confidence</div>
+        </div>
+        <div class="impact__card">
+          <div class="impact__number">15</div>
+          <div class="impact__label">Countries reached through our global women's network and outreach</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__text">&copy; 2026 The Frame Foundation. All rights reserved.</p>
+        <div class="footer__links">
+          <a href="index.html" class="footer__link">Home</a>
+          <a href="gallery.html" class="footer__link">Gallery</a>
+          <a href="donate.html" class="footer__link">Donate</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
