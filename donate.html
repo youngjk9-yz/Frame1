@@ -95,7 +95,42 @@
           <label for="donor-message">Message (optional)</label>
           <textarea id="donor-message" name="message" placeholder="Share why you're supporting The Frame Foundation..."></textarea>
         </div>
-        <button type="submit" class="btn btn--accent btn--large">Donate Now</button>
+
+        <!-- Stripe Payment Section (revealed after clicking Donate Now) -->
+        <div class="payment-section" id="payment-section">
+          <h3 class="payment-section__title">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="vertical-align: middle; margin-right: 6px;">
+              <rect x="1" y="4" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <line x1="1" y1="8" x2="19" y2="8" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+            Payment Information
+          </h3>
+          <p class="payment-section__secure">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="vertical-align: middle; margin-right: 4px;">
+              <rect x="2" y="6" width="10" height="7" rx="1.5" stroke="#2e8b8b" stroke-width="1.2" fill="none"/>
+              <path d="M4.5 6V4.5a2.5 2.5 0 015 0V6" stroke="#2e8b8b" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+            </svg>
+            Secure payment powered by Stripe
+          </p>
+
+          <!-- Stripe Card Element mounts here -->
+          <div class="form-group">
+            <label for="card-element">Credit or Debit Card</label>
+            <div id="card-element" class="stripe-card-element"></div>
+            <div id="card-errors" class="stripe-card-errors" role="alert"></div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn--accent btn--large" id="donate-btn">
+          <span id="btn-text">Donate Now</span>
+          <span id="btn-spinner" class="btn-spinner" style="display: none;">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="spinner-icon">
+              <circle cx="10" cy="10" r="8" stroke="rgba(255,255,255,0.3)" stroke-width="2.5" fill="none"/>
+              <path d="M10 2a8 8 0 018 8" stroke="#fff" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            </svg>
+            Processing…
+          </span>
+        </button>
       </form>
 
       <!-- Success Message -->
@@ -141,6 +176,8 @@
     </div>
   </footer>
 
+  <!-- Stripe.js -->
+  <script src="https://js.stripe.com/v3/"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
