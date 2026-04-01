@@ -348,13 +348,19 @@ function initAboutMap() {
 
     const marker = L.marker([loc.lat, loc.lng], { icon }).addTo(map);
 
-    // Bind popup with country info
+    // Permanent label above the marker showing country name
+    marker.bindTooltip(loc.country, {
+      permanent: true,
+      direction: 'top',
+      offset: [0, -12],
+      className: 'map-country-label',
+    });
+
+    // Hover popup for detail text
     marker.bindPopup(
-      `<strong>${loc.country}</strong><span>${loc.detail}</span>`,
+      `<span>${loc.detail}</span>`,
       { closeButton: false, offset: [0, -4] }
     );
-
-    // Show popup on hover
     marker.on('mouseover', function () { this.openPopup(); });
     marker.on('mouseout',  function () { this.closePopup(); });
   });

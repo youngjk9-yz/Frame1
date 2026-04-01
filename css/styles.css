@@ -886,6 +886,23 @@ p {
   opacity: 0.5;
 }
 
+/* Permanent country name labels above markers */
+.map-country-label {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-family: var(--font-sans) !important;
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+  color: var(--color-text) !important;
+  padding: 0 !important;
+  white-space: nowrap;
+}
+
+.map-country-label::before {
+  display: none !important;
+}
+
 /* Legend */
 .about-map__legend {
   display: flex;
