@@ -298,44 +298,65 @@ function initDonation() {
 
 /* ===== ABOUT PAGE MAP ===== */
 function initAboutMap() {
-  const wrapper = document.getElementById('map-wrapper');
-  const tooltip = document.getElementById('map-tooltip');
-  const tooltipCountry = document.getElementById('tooltip-country');
-  const tooltipDetail = document.getElementById('tooltip-detail');
-  if (!wrapper || !tooltip) return;
+  const mapEl = document.getElementById('world-map');
+  if (!mapEl || typeof L === 'undefined') return;
 
-  const markers = wrapper.querySelectorAll('.map-marker');
+  // Initialize the map — centered to show all markers nicely
+  const map = L.map('world-map', {
+    center: [25, 20],
+    zoom: 2,
+    minZoom: 2,
+    maxZoom: 5,
+    zoomControl: false,
+    scrollWheelZoom: false,
+    dragging: true,
+    doubleClickZoom: false,
+    touchZoom: false,
+    attributionControl: true,
+  });
 
-  markers.forEach(marker => {
-    marker.addEventListener('mouseenter', () => {
-      const country = marker.dataset.country;
-      const members = marker.dataset.members;
-      tooltipCountry.textContent = country;
-      tooltipDetail.textContent = members || '';
+  // CartoDB Positron — a clean, minimal, gray basemap
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
+    subdomains: 'abcd',
+    maxZoom: 19,
+  }).addTo(map);
 
-      // Get the solid circle (second circle) position
-      const circle = marker.querySelectorAll('circle')[1];
-      const svg = wrapper.querySelector('svg');
-      const svgRect = svg.getBoundingClientRect();
-      const cx = parseFloat(circle.getAttribute('cx'));
-      const cy = parseFloat(circle.getAttribute('cy'));
+  // Member locations
+  const locations = [
+    { lat: 37.5665, lng: 126.9780, country: 'South Korea',    detail: 'Founding chapter',              color: '#8b2252' },
+    { lat: 38.9,    lng: -77.0,    country: 'United States',   detail: 'Our largest chapter',            color: '#b8860b' },
+    { lat: 43.65,   lng: -79.38,   country: 'Canada',          detail: 'Growing community',              color: '#2e8b8b' },
+    { lat: 52.37,   lng: 4.90,     country: 'Netherlands',     detail: 'European hub',                   color: '#2c3e6b' },
+    { lat: 35.68,   lng: 139.65,   country: 'Japan',           detail: 'Asia-Pacific network',           color: '#b8860b' },
+    { lat: 1.35,    lng: 103.82,   country: 'Singapore',       detail: 'Southeast Asia chapter',         color: '#2e8b8b' },
+    { lat: -33.87,  lng: 151.21,   country: 'Australia',       detail: 'Southern hemisphere chapter',    color: '#2c3e6b' },
+  ];
 
-      // Convert SVG coordinates to pixel coordinates within the wrapper
-      const viewBox = svg.viewBox.baseVal;
-      const scaleX = svgRect.width / viewBox.width;
-      const scaleY = svgRect.height / viewBox.height;
-      const pixelX = cx * scaleX;
-      const pixelY = cy * scaleY;
-
-      // Position tooltip above the marker
-      tooltip.style.left = pixelX + 'px';
-      tooltip.style.top = (pixelY - 16) + 'px';
-      tooltip.style.transform = 'translate(-50%, -100%)';
-      tooltip.classList.add('map-tooltip--visible');
+  locations.forEach(loc => {
+    // Create a custom pulsing marker using divIcon
+    const icon = L.divIcon({
+      className: 'map-pulse-marker',
+      html: `
+        <div class="map-marker-pulse" style="background: ${loc.color};"></div>
+        <div class="map-marker-dot" style="background: ${loc.color};"></div>
+      `,
+      iconSize: [14, 14],
+      iconAnchor: [7, 7],
+      popupAnchor: [0, -12],
     });
 
-    marker.addEventListener('mouseleave', () => {
-      tooltip.classList.remove('map-tooltip--visible');
-    });
+    const marker = L.marker([loc.lat, loc.lng], { icon }).addTo(map);
+
+    // Bind popup with country info
+    marker.bindPopup(
+      `<strong>${loc.country}</strong><span>${loc.detail}</span>`,
+      { closeButton: false, offset: [0, -4] }
+    );
+
+    // Show popup on hover
+    marker.on('mouseover', function () { this.openPopup(); });
+    marker.on('mouseout',  function () { this.closePopup(); });
   });
 }
+
