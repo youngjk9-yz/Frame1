@@ -795,6 +795,42 @@ p {
   max-width: 620px;
 }
 
+/* Community Highlights (above map) */
+.about-highlights {
+  margin-bottom: var(--space-xl);
+  padding: var(--space-xl) var(--space-lg);
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid var(--color-border-light);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.03);
+}
+
+.about-highlights__title {
+  margin-bottom: var(--space-lg);
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.about-highlights__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.about-highlights__item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+.about-highlights__item svg {
+  flex-shrink: 0;
+}
+
 .about-map__wrapper {
   position: relative;
   width: 100%;
@@ -931,7 +967,8 @@ p {
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
   .mission__grid,
-  .impact__grid {
+  .impact__grid,
+  .about-highlights__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -968,7 +1005,8 @@ p {
   }
 
   .mission__grid,
-  .impact__grid {
+  .impact__grid,
+  .about-highlights__grid {
     grid-template-columns: 1fr;
   }
 
