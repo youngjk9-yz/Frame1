@@ -321,9 +321,9 @@ function initAboutMap() {
     .then(data => {
       L.geoJSON(data, {
         style: {
-          fillColor: '#d1cca2', // warm beige continent fill
-          fillOpacity: 0.35,
-          color: '#e8e5df', // continent borders
+          fillColor: '#edeae1', // very light beige for low contrast
+          fillOpacity: 0.9,
+          color: '#c4c0b2', // darker beige-gray for visible country borders
           weight: 0.8
         }
       }).addTo(map);
