@@ -640,7 +640,7 @@ p {
   border: 1.5px solid var(--color-border);
   border-radius: 4px;
   background: var(--color-bg-alt);
-  animation: slideDown 0.4s ease;
+  animation: paymentReveal 0.4s ease;
 }
 
 .payment-section--visible {
@@ -669,6 +669,7 @@ p {
   padding: 0.85rem 1rem;
   border: 1px solid var(--color-border);
   background: #fff;
+  min-height: 44px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -685,16 +686,14 @@ p {
   min-height: 1.2em;
 }
 
-@keyframes slideDown {
+@keyframes paymentReveal {
   from {
     opacity: 0;
     transform: translateY(-12px);
-    max-height: 0;
   }
   to {
     opacity: 1;
     transform: translateY(0);
-    max-height: 500px;
   }
 }
 

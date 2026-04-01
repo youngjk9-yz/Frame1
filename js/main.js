@@ -199,7 +199,9 @@ function initDonation() {
         paymentRevealed = true;
         btnText.textContent = 'Complete Payment';
 
-        // Initialize Stripe when payment section is revealed
+        // Wait for the section to fully render before mounting Stripe
+        // (Stripe needs the container to have non-zero dimensions)
+        await new Promise(resolve => setTimeout(resolve, 300));
         await initStripe();
 
         // Smooth scroll to payment section
