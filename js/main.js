@@ -312,15 +312,23 @@ function initAboutMap() {
     dragging: true,
     doubleClickZoom: false,
     touchZoom: false,
-    attributionControl: true,
+    attributionControl: false,
   });
 
-  // CartoDB Positron — a clean, minimal, gray basemap
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
-    subdomains: 'abcd',
-    maxZoom: 19,
-  }).addTo(map);
+  // Load clean GeoJSON world map instead of raster tiles (removes ocean background)
+  fetch('js/world.geojson')
+    .then(res => res.json())
+    .then(data => {
+      L.geoJSON(data, {
+        style: {
+          fillColor: '#d1cca2', // warm beige continent fill
+          fillOpacity: 0.35,
+          color: '#e8e5df', // continent borders
+          weight: 0.8
+        }
+      }).addTo(map);
+    })
+    .catch(err => console.error("Could not load world map geojson:", err));
 
   // Member locations
   const locations = [
