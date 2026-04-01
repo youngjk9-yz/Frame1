@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initLightbox();
   initDonation();
+  initAboutMap();
 });
 
 /* ===== MOBILE NAVIGATION ===== */
@@ -293,4 +294,48 @@ function initDonation() {
       }
     });
   }
+}
+
+/* ===== ABOUT PAGE MAP ===== */
+function initAboutMap() {
+  const wrapper = document.getElementById('map-wrapper');
+  const tooltip = document.getElementById('map-tooltip');
+  const tooltipCountry = document.getElementById('tooltip-country');
+  const tooltipDetail = document.getElementById('tooltip-detail');
+  if (!wrapper || !tooltip) return;
+
+  const markers = wrapper.querySelectorAll('.map-marker');
+
+  markers.forEach(marker => {
+    marker.addEventListener('mouseenter', () => {
+      const country = marker.dataset.country;
+      const members = marker.dataset.members;
+      tooltipCountry.textContent = country;
+      tooltipDetail.textContent = members || '';
+
+      // Get the solid circle (second circle) position
+      const circle = marker.querySelectorAll('circle')[1];
+      const svg = wrapper.querySelector('svg');
+      const svgRect = svg.getBoundingClientRect();
+      const cx = parseFloat(circle.getAttribute('cx'));
+      const cy = parseFloat(circle.getAttribute('cy'));
+
+      // Convert SVG coordinates to pixel coordinates within the wrapper
+      const viewBox = svg.viewBox.baseVal;
+      const scaleX = svgRect.width / viewBox.width;
+      const scaleY = svgRect.height / viewBox.height;
+      const pixelX = cx * scaleX;
+      const pixelY = cy * scaleY;
+
+      // Position tooltip above the marker
+      tooltip.style.left = pixelX + 'px';
+      tooltip.style.top = (pixelY - 16) + 'px';
+      tooltip.style.transform = 'translate(-50%, -100%)';
+      tooltip.classList.add('map-tooltip--visible');
+    });
+
+    marker.addEventListener('mouseleave', () => {
+      tooltip.classList.remove('map-tooltip--visible');
+    });
+  });
 }

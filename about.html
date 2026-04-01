@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about The Frame Foundation's global community — our members span 7 countries across 4 continents, united by a mission to empower women.">
+  <title>About — The Frame Foundation</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <nav class="nav" id="main-nav">
+      <a href="index.html" class="nav__logo">The Frame Foundation</a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="gallery.html" class="nav__link">Gallery</a></li>
+        <li><a href="about.html" class="nav__link nav__link--active">About</a></li>
+        <li><a href="donate.html" class="nav__link">Donate</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1 class="page-header__title">About Us</h1>
+      <p class="page-header__subtitle">
+        Our members span the globe, united by a shared mission to empower women in leadership, career growth, and community building.
+      </p>
+    </div>
+  </section>
+
+  <!-- World Map Section -->
+  <section class="about-map">
+    <div class="container">
+      <h2 class="about-map__heading">Our Global Community</h2>
+      <p class="about-map__text">
+        From Seoul to San Francisco, our network of changemakers drives impact across borders. Here's where our members call home.
+      </p>
+
+      <div class="about-map__wrapper" id="map-wrapper">
+        <!-- SVG World Map (simplified Natural Earth projection) -->
+        <svg class="about-map__svg" id="world-map" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="World map showing Frame Foundation member locations">
+
+          <!-- Ocean background -->
+          <rect width="1000" height="500" fill="var(--color-bg-alt)" rx="8"/>
+
+          <!-- Simplified world continents -->
+          <!-- North America -->
+          <path d="M120,80 L160,60 L200,55 L240,50 L280,55 L290,70 L285,90 L275,100 L260,105 L250,120 L240,140 L220,160 L210,180 L200,200 L195,210 L200,220 L210,230 L215,240 L210,250 L200,255 L185,250 L175,240 L165,235 L155,230 L145,220 L140,210 L135,195 L130,180 L128,170 L125,160 L120,150 L115,140 L112,130 L110,120 L112,100 L115,90 Z"
+                fill="var(--color-border)" stroke="var(--color-border-light)" stroke-width="0.5" opacity="0.6"/>
+          <!-- Greenland -->
+          <path d="M280,35 L310,30 L340,35 L350,50 L340,65 L320,70 L300,65 L285,55 Z"
+                fill="var(--color-border)" stroke="var(--color-border-light)" stroke-width="0.5" opacity="0.6"/>
+
+          <!-- South America -->
+          <path d="M210,270 L225,265 L240,270 L255,280 L265,300 L270,320 L275,340 L270,360 L260,380 L245,400 L230,415 L220,425 L215,420 L210,400 L205,380 L200,360 L195,340 L198,320 L202,300 L205,285 Z"
+                fill="var(--color-border)" stroke="var(--color-border-light)" stroke-width="0.5" opacity="0.6"/>
+
+          <!-- Europe -->
+          <path d="M430,60 L450,55 L470,58 L485,65 L490,80 L495,95 L490,110 L485,120 L475,130 L465,140 L455,145 L445,150 L438,145 L432,135 L428,120 L425,105 L420,90 L422,75 Z"
+                fill="var(--color-border)" stroke="var(--color-border-light)" stroke-width="0.5" opacity="0.6"/>
+          <!-- UK/Ireland -->
+          <path d="M415,75 L425,70 L430,80 L428,90 L420,95 L412,88 Z"
+                fill="var(--color-border)" stroke="var(--color-border-light)" stroke-width="0.5" opacity="0.6"/>
+          <!-- Scandinavia -->
+          <path d="M460,30 L475,25 L485,30 L490,45 L488,55 L480,60 L470,55 L462,45 Z"
+                fill="var(--color-border)" stroke="var(--color-border-light)" stroke-width="0.5" opacity="0.6"/>
+
+          <!-- Africa -->
+          <path d="M440,160 L475,155 L510,165 L530,180 L540,200 L545,230 L540,260 L530,290 L515,320 L500,340 L485,350 L470,345 L458,330 L448,310 L440,285 L435,260 L432,235 L430,210 L432,190 L435,175 Z"
+                fill="var(--color-border)" stroke="var(--color-border-light)" stroke-width="0.5" opacity="0.6"/>
+
+          <!-- Asia (main mass) -->
+          <path d="M500,50 L540,40 L580,35 L620,30 L660,35 L700,40 L740,50 L770,60 L790,75 L800,90 L795,110 L785,130 L770,145 L750,155 L730,160 L710,165 L690,170 L670,175 L650,180 L630,178 L610,175 L590,170 L570,160 L555,150 L545,140 L530,125 L520,110 L510,95 L505,80 L500,65 Z"
+                fill="var(--color-border)" stroke="var(--color-border-light)" stroke-width="0.5" opacity="0.6"/>
+          <!-- Middle East / Indian subcontinent -->
+          <path d="M555,150 L575,155 L600,165 L620,180 L640,195 L650,210 L645,225 L630,235 L610,230 L590,220 L575,210 L560,195 L550,180 L545,165 Z"
+                fill="var(--color-border)" stroke="var(--color-border-light)" stroke-width="0.5" opacity="0.6"/>
+          <!-- Southeast Asia -->
+          <path d="M700,170 L720,175 L740,185 L750,200 L745,215 L735,225 L720,230 L705,225 L695,215 L690,200 L692,185 Z"
+                fill="var(--color-border)" stroke="var(--color-border-light)" stroke-width="0.5" opacity="0.6"/>
+          <!-- Japan archipelago -->
+          <path d="M800,85 L810,80 L818,88 L815,100 L808,110 L800,105 L798,95 Z"
+                fill="var(--color-border)" stroke="var(--color-border-light)" stroke-width="0.5" opacity="0.6"/>
+          <!-- Korean peninsula -->
+          <path d="M778,85 L788,80 L795,90 L792,100 L785,108 L778,102 L775,95 Z"
+                fill="var(--color-border)" stroke="var(--color-border-light)" stroke-width="0.5" opacity="0.6"/>
+
+          <!-- Indonesia / Malaysia -->
+          <path d="M720,250 L745,245 L770,250 L785,260 L780,270 L760,275 L740,272 L725,265 Z"
+                fill="var(--color-border)" stroke="var(--color-border-light)" stroke-width="0.5" opacity="0.6"/>
+
+          <!-- Australia -->
+          <path d="M760,310 L790,295 L820,290 L850,295 L870,310 L875,330 L870,350 L855,370 L835,380 L810,385 L785,378 L768,365 L758,345 L755,325 Z"
+                fill="var(--color-border)" stroke="var(--color-border-light)" stroke-width="0.5" opacity="0.6"/>
+
+          <!-- ===== MEMBER LOCATION MARKERS ===== -->
+
+          <!-- USA (approximate: New York area) -->
+          <g class="map-marker" data-country="United States" data-members="Our largest chapter">
+            <circle cx="195" cy="130" r="16" fill="var(--color-accent-gold)" opacity="0.15">
+              <animate attributeName="r" values="16;24;16" dur="2.5s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.15;0;0.15" dur="2.5s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="195" cy="130" r="6" fill="var(--color-accent-gold)" stroke="#fff" stroke-width="2"/>
+          </g>
+
+          <!-- Canada (approximate: Toronto/Ontario) -->
+          <g class="map-marker" data-country="Canada" data-members="Growing community">
+            <circle cx="200" cy="95" r="16" fill="var(--color-accent-teal)" opacity="0.15">
+              <animate attributeName="r" values="16;24;16" dur="2.8s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.15;0;0.15" dur="2.8s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="200" cy="95" r="6" fill="var(--color-accent-teal)" stroke="#fff" stroke-width="2"/>
+          </g>
+
+          <!-- Netherlands (approximate: Western Europe) -->
+          <g class="map-marker" data-country="Netherlands" data-members="European hub">
+            <circle cx="458" cy="82" r="16" fill="var(--color-accent-navy)" opacity="0.15">
+              <animate attributeName="r" values="16;24;16" dur="3s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.15;0;0.15" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="458" cy="82" r="6" fill="var(--color-accent-navy)" stroke="#fff" stroke-width="2"/>
+          </g>
+
+          <!-- South Korea (approximate: Seoul) -->
+          <g class="map-marker" data-country="South Korea" data-members="Founding chapter">
+            <circle cx="785" cy="100" r="16" fill="var(--color-accent-maroon)" opacity="0.15">
+              <animate attributeName="r" values="16;24;16" dur="2.6s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.15;0;0.15" dur="2.6s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="785" cy="100" r="6" fill="var(--color-accent-maroon)" stroke="#fff" stroke-width="2"/>
+          </g>
+
+          <!-- Japan (approximate: Tokyo) -->
+          <g class="map-marker" data-country="Japan" data-members="Asia-Pacific network">
+            <circle cx="810" cy="95" r="16" fill="var(--color-accent-gold)" opacity="0.15">
+              <animate attributeName="r" values="16;24;16" dur="2.3s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.15;0;0.15" dur="2.3s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="810" cy="95" r="6" fill="var(--color-accent-gold)" stroke="#fff" stroke-width="2"/>
+          </g>
+
+          <!-- Singapore (approximate: Southeast Asia) -->
+          <g class="map-marker" data-country="Singapore" data-members="Southeast Asia chapter">
+            <circle cx="718" cy="235" r="16" fill="var(--color-accent-teal)" opacity="0.15">
+              <animate attributeName="r" values="16;24;16" dur="2.9s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.15;0;0.15" dur="2.9s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="718" cy="235" r="6" fill="var(--color-accent-teal)" stroke="#fff" stroke-width="2"/>
+          </g>
+
+          <!-- Australia (approximate: Sydney) -->
+          <g class="map-marker" data-country="Australia" data-members="Southern hemisphere chapter">
+            <circle cx="840" cy="345" r="16" fill="var(--color-accent-navy)" opacity="0.15">
+              <animate attributeName="r" values="16;24;16" dur="2.7s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.15;0;0.15" dur="2.7s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="840" cy="345" r="6" fill="var(--color-accent-navy)" stroke="#fff" stroke-width="2"/>
+          </g>
+
+        </svg>
+
+        <!-- Tooltip (positioned by JS) -->
+        <div class="map-tooltip" id="map-tooltip" aria-hidden="true">
+          <span class="map-tooltip__country" id="tooltip-country"></span>
+          <span class="map-tooltip__detail" id="tooltip-detail"></span>
+        </div>
+      </div>
+
+      <!-- Legend -->
+      <div class="about-map__legend" id="map-legend">
+        <div class="legend-item">
+          <span class="legend-dot" style="background: var(--color-accent-maroon)"></span>
+          South Korea
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background: var(--color-accent-gold)"></span>
+          United States
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background: var(--color-accent-teal)"></span>
+          Canada
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background: var(--color-accent-navy)"></span>
+          Netherlands
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background: var(--color-accent-gold)"></span>
+          Japan
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background: var(--color-accent-teal)"></span>
+          Singapore
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background: var(--color-accent-navy)"></span>
+          Australia
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__text">&copy; 2026 The Frame Foundation. All rights reserved.</p>
+        <div class="footer__links">
+          <a href="index.html" class="footer__link">Home</a>
+          <a href="gallery.html" class="footer__link">Gallery</a>
+          <a href="about.html" class="footer__link">About</a>
+          <a href="donate.html" class="footer__link">Donate</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
