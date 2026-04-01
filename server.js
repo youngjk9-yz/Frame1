@@ -59,15 +59,12 @@ app.post('/api/create-payment-intent', async (req, res) => {
       currency: 'usd',
       description: `Donation to The Frame Foundation`,
       receipt_email: email,
+      payment_method_types: ['card'],
       metadata: {
         donor_name: name,
         donor_email: email,
         donor_message: message || '',
         source: 'frame-foundation-website',
-      },
-      // Automatically send a receipt email
-      automatic_payment_methods: {
-        enabled: true,
       },
     });
 
