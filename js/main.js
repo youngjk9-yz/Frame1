@@ -333,19 +333,17 @@ function initAboutMap() {
   // Member locations
   const locations = [
     { lat: 37.5665, lng: 126.9780, country: 'South Korea',    detail: 'Founding chapter',              color: '#8b2252' },
-    { lat: 38.9,    lng: -77.0,    country: 'United States',  detail: 'Our largest chapter',            color: '#b8860b' },
-    { lat: 40.71,   lng: -74.00,   country: 'New York',       detail: 'US network',                     color: '#b8860b' },
-    { lat: 34.05,   lng: -118.24,  country: 'Los Angeles',    detail: 'US network',                     color: '#b8860b' },
-    { lat: 37.77,   lng: -122.41,  country: 'San Francisco',  detail: 'US network',                     color: '#b8860b' },
-    { lat: 32.71,   lng: -117.16,  country: 'San Diego',      detail: 'US network',                     color: '#b8860b' },
-    { lat: 33.44,   lng: -112.07,  country: 'Phoenix',        detail: 'US network',                     color: '#b8860b' },
-    { lat: 47.60,   lng: -122.33,  country: 'Seattle',        detail: 'US network',                     color: '#b8860b' },
-    { lat: 43.65,   lng: -79.38,   country: 'Canada',         detail: 'Growing community',              color: '#2e8b8b' },
-    { lat: 49.28,   lng: -123.12,  country: 'Vancouver',      detail: 'Canada network',                 color: '#2e8b8b' },
-    { lat: 52.37,   lng: 4.90,     country: 'Netherlands',    detail: 'European hub',                   color: '#2c3e6b' },
-    { lat: 35.68,   lng: 139.65,   country: 'Japan',          detail: 'Asia-Pacific network',           color: '#b8860b' },
-    { lat: 1.35,    lng: 103.82,   country: 'Singapore',      detail: 'Southeast Asia chapter',         color: '#2e8b8b' },
-    { lat: -33.87,  lng: 151.21,   country: 'Australia',      detail: 'Southern hemisphere chapter',    color: '#2c3e6b' },
+    { lat: 40.71,   lng: -74.00,   country: 'New York',       detail: 'US network',                    color: '#b8860b' },
+    { lat: 37.77,   lng: -122.41,  country: 'San Francisco',  detail: 'US network',                    color: '#b8860b', dir: 'left', offset: [-12, -4] },
+    { lat: 34.05,   lng: -118.24,  country: 'Los Angeles',    detail: 'US network',                    color: '#b8860b', dir: 'left', offset: [-12, -4] },
+    { lat: 32.71,   lng: -117.16,  country: 'San Diego',      detail: 'US network',                    color: '#b8860b', dir: 'bottom', offset: [0, 4] },
+    { lat: 33.44,   lng: -112.07,  country: 'Phoenix',        detail: 'US network',                    color: '#b8860b', dir: 'right', offset: [12, -4] },
+    { lat: 49.28,   lng: -123.12,  country: 'Vancouver',      detail: 'Canada network',                color: '#2e8b8b', dir: 'top', offset: [0, -12] },
+    { lat: 47.60,   lng: -122.33,  country: 'Seattle',        detail: 'US network',                    color: '#b8860b', dir: 'bottom', offset: [0, 4] },
+    { lat: 52.37,   lng: 4.90,     country: 'Netherlands',    detail: 'European hub',                  color: '#2c3e6b' },
+    { lat: 35.68,   lng: 139.65,   country: 'Japan',          detail: 'Asia-Pacific network',          color: '#b8860b' },
+    { lat: 1.35,    lng: 103.82,   country: 'Singapore',      detail: 'Southeast Asia chapter',        color: '#2e8b8b' },
+    { lat: -33.87,  lng: 151.21,   country: 'Australia',      detail: 'Southern hemisphere chapter',   color: '#2c3e6b' },
   ];
 
   locations.forEach(loc => {
@@ -366,8 +364,8 @@ function initAboutMap() {
     // Permanent label above the marker showing country name
     marker.bindTooltip(loc.country, {
       permanent: true,
-      direction: 'top',
-      offset: [0, -12],
+      direction: loc.dir || 'top',
+      offset: loc.offset || [0, -12],
       className: 'map-country-label',
     });
 
