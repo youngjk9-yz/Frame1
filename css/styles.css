@@ -787,6 +787,67 @@ p {
   flex-wrap: wrap;
 }
 
+/* ===== TEAM SECTION ===== */
+.team {
+  padding: var(--space-lg) 0 var(--space-3xl);
+}
+
+.team__heading {
+  margin-bottom: var(--space-lg);
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--color-text);
+  margin-top: var(--space-2xl);
+}
+
+.team__heading:first-child {
+  margin-top: 0;
+}
+
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+
+.team-member {
+  text-align: center;
+}
+
+.team-member__img-wrapper {
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: var(--space-md);
+  aspect-ratio: 1;
+  background-color: var(--color-border-light);
+}
+
+.team-member__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.team-member:hover .team-member__img {
+  transform: scale(1.03);
+}
+
+.team-member__name {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: var(--color-text);
+}
+
+.team-member__title {
+  font-size: 0.95rem;
+  color: var(--color-accent-teal);
+  font-weight: 500;
+}
+
 /* ===== ABOUT MAP SECTION ===== */
 .about-map {
   padding: var(--space-lg) 0 var(--space-3xl);
@@ -938,7 +999,8 @@ p {
 @media (max-width: 900px) {
   .mission__grid,
   .impact__grid,
-  .about-highlights__grid {
+  .about-highlights__grid,
+  .team__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -976,7 +1038,8 @@ p {
 
   .mission__grid,
   .impact__grid,
-  .about-highlights__grid {
+  .about-highlights__grid,
+  .team__grid {
     grid-template-columns: 1fr;
   }
 
