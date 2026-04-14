@@ -286,7 +286,12 @@ p {
 
 .mission__item {
   padding-left: var(--space-md);
+  padding-right: var(--space-md);
   border-left: 3px solid var(--color-accent-gold);
+}
+
+.mission__item h3 {
+  margin-bottom: var(--space-xs);
 }
 
 .mission__item:nth-child(2) {
