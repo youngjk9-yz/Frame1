@@ -1281,4 +1281,12 @@ p {
   .hero {
     padding: var(--space-2xl) 0 var(--space-xl);
   }
+
+  .contact-form {
+    padding: var(--space-lg);
+  }
+
+  .contact__heading {
+    font-size: 2.2rem;
+  }
 }
